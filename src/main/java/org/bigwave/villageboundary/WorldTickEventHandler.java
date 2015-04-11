@@ -155,7 +155,7 @@ public class WorldTickEventHandler
 		{
 			;
 		}
-		return groundLevelBlockPos.getY();
+		return groundLevelBlockPos.down().getY();
 	}
 
 private int goDownToGroundLevel(World world, BlockPos blockToCheck) {
