@@ -1,6 +1,7 @@
 /*
 /*/
 !/src/
+!/build.gradle
 
 # Windows image file caches
 Thumbs.db
