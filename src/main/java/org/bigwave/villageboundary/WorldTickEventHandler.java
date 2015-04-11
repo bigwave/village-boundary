@@ -92,21 +92,24 @@ public class WorldTickEventHandler
 				    String message = "Do nothing                     ";
 					if (offsetDistance > -4 && offsetDistance < 4)
 					{
-						if (groundLevelBlock == Blocks.grass)
+						if (world.rand.nextFloat() > 0.5F)
 						{
-							if (world.rand.nextFloat() > 0.5F)
+							if (groundLevelBlock == Blocks.grass)
 							{
 								world.setBlockState(groundLevelBlockPos.up(), Blocks.red_flower.getDefaultState());
 								message = "Plant flower on boundary       ";
 							}
-						}
 						
-						if (groundLevelBlock == Blocks.red_flower)
-						{
-							if (world.rand.nextFloat() > 0.5F)
+							if (groundLevelBlock == Blocks.sand)
+							{
+								world.setBlockState(groundLevelBlockPos.up(), Blocks.deadbush.getDefaultState());
+								message = "Plant dead bush on boundary    ";
+							}
+						
+							if (groundLevelBlock == Blocks.red_flower)
 							{
 								world.setBlockToAir(groundLevelBlockPos);
-								message = "Remove flower on boundary      ";
+								message = "Remove flower/bush on boundary ";
 							}
 						}
 					}
